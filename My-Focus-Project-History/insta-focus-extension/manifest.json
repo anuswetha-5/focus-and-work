@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Instagram Focus & Notes",
+  "version": "1.0",
+  "description": "Hides Reels/Explore feeds and adds a side panel for notes while using Instagram DMs.",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.instagram.com/*"],
+      "css": ["styles.css"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}

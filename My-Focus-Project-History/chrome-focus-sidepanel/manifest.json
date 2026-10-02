@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Study & Focus Sidebar",
+  "version": "1.0",
+  "description": "Opens a native PDF & Notes sidebar next to Instagram.",
+  "permissions": ["sidePanel", "storage"],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "Toggle Study Sidebar"
+  }
+}
