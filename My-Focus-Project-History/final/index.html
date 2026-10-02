@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Workspace ✨</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Fredoka', 'Comfortaa', 'Comic Sans MS', sans-serif;
+      background-color: #111116;
+      color: #FFF;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Top Bar */
+    header {
+      background: linear-gradient(135deg, #FFD100 0%, #ffaa00 100%);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(255, 209, 0, 0.3);
+      border-bottom: 4px solid #111116;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      height: 45px;
+      width: 45px;
+      border-radius: 50%;
+      border: 2px solid #111116;
+      object-fit: cover;
+      background: #FFF;
+    }
+
+    .brand h1 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #111116;
+      text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+      letter-spacing: 0.5px;
+    }
+
+    .tagline {
+      font-size: 12px;
+      background: #111116;
+      color: #FFD100;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-weight: bold;
+    }
+
+    /* Main Container */
+    .container {
+      display: flex;
+      flex: 1;
+      height: calc(100vh - 60px);
+      padding: 14px;
+      gap: 14px;
+    }
+
+    /* Left Panel: Study Zone */
+    .study-card {
+      flex: 1;
+      background: #1A1A24;
+      border: 3px solid #FFD100;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      padding: 14px;
+      gap: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    /* Navigation Tabs */
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      background: #252533;
+      color: #FFF;
+      border: 2px solid #3B3B4F;
+      padding: 10px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 13px;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      background: #FFD100;
+      color: #111116;
+      border-color: #FFD100;
+    }
+
+    .tab-btn.active {
+      background: #FFD100;
+      color: #111116;
+      border-color: #FFD100;
+      box-shadow: 0 4px 10px rgba(255, 209, 102, 0.3);
+    }
+
+    .tab-content {
+      display: none;
+      flex: 1;
+      flex-direction: column;
+      gap: 10px;
+      overflow: hidden;
+    }
+
+    .tab-content.active {
+      display: flex;
+    }
+
+    /* Notes Scratchpad */
+    textarea {
+      width: 100%;
+      height: 100%;
+      background: #111116;
+      color: #FFD100;
+      border: 2px solid #3B3B4F;
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 14px;
+      line-height: 1.6;
+      resize: none;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    textarea:focus {
+      border-color: #06D6A0;
+    }
+
+    /* Upload & Video Inputs */
+    .btn-action {
+      background: #06D6A0;
+      color: #111116;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .btn-action:hover {
+      background: #05b88a;
+    }
+
+    .file-label input { display: none; }
+
+    #pdf-frame, #yt-frame {
+      width: 100%;
+      flex: 1;
+      border: 2px solid #3B3B4F;
+      border-radius: 10px;
+      background: #111116;
+    }
+
+    .yt-box {
+      display: flex;
+      gap: 8px;
+    }
+
+    .yt-box input {
+      flex: 1;
+      background: #111116;
+      border: 2px solid #3B3B4F;
+      color: #FFF;
+      padding: 8px 12px;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    /* Right Panel: Chat Card */
+    .chat-card {
+      width: 380px;
+      background: #1A1A24;
+      border: 3px solid #FFD100;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      gap: 16px;
+    }
+
+    .couple-badge {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid #FFD100;
+      overflow: hidden;
+      background: #FFF;
+      box-shadow: 0 6px 15px rgba(255, 209, 0, 0.3);
+    }
+
+    .couple-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .launch-btn {
+      background: linear-gradient(135deg, #0095f6 0%, #1877f2 100%);
+      color: #FFF;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 149, 246, 0.4);
+      transition: transform 0.2s ease;
+      width: 100%;
+    }
+
+    .launch-btn:hover {
+      transform: scale(1.04);
+    }
+
+    /* 📱 MOBILE RESPONSIVENESS */
+    @media (max-width: 768px) {
+      body {
+        height: auto;
+        overflow-y: auto;
+      }
+      .container {
+        flex-direction: column;
+        height: auto;
+      }
+      .study-card {
+        height: 60vh;
+      }
+      .chat-card {
+        width: 100%;
+      }
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+      .brand h1 {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <img src="./couple.jpeg" alt="Logo">
+      <h1>✨ Our Workspace</h1>
+      <span class="tagline">Productive Zone ⚡</span>
+    </div>
+    <div style="font-size: 13px; color: #111116; font-weight: bold; background: #FFD100; padding: 4px 10px; border-radius: 8px;">
+      "No Reels Allowed!" 🛑
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Left Workspace -->
+    <div class="study-card">
+      <div class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('notes')">📝 Notes</button>
+        <button class="tab-btn" onclick="switchTab('pdf')">📄 PDF Reader</button>
+        <button class="tab-btn" onclick="switchTab('yt')">▶️ Video Player</button>
+      </div>
+
+      <!-- Tab 1: Notes -->
+      <div id="tab-notes" class="tab-content active">
+        <textarea id="notes-pad" placeholder="Type your study notes, formulas, or key reminders here... (Auto-saves automatically!)"></textarea>
+      </div>
+
+      <!-- Tab 2: PDF -->
+      <div id="tab-pdf" class="tab-content">
+        <label class="btn-action file-label">
+          📂 Choose PDF File
+          <input type="file" id="pdf-input" accept="application/pdf">
+        </label>
+        <iframe id="pdf-frame"></iframe>
+      </div>
+
+      <!-- Tab 3: YouTube -->
+      <div id="tab-yt" class="tab-content">
+        <div class="yt-box">
+          <input type="text" id="yt-url" placeholder="Paste YouTube link...">
+          <button class="btn-action" onclick="loadVideo()">Load</button>
+        </div>
+        <iframe id="yt-frame" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- Right Side: Chat Menu -->
+    <div class="chat-card">
+      <div class="couple-badge">
+        <img src="./couple.jpeg" alt="Couple Badge">
+      </div>
+      <h2 style="color: #FFD100;">Chat Launcher</h2>
+      <p style="font-size: 13px; color: #A0A5C0; line-height: 1.5; margin-bottom: 5px;">
+        Talk while you study, zero distractions!
+      </p>
+      
+      <div style="display: flex; flex-direction: column; gap: 12px; width: 100%;">
+        <button class="launch-btn" onclick="openPopup('https://www.instagram.com/direct/inbox/')">📷 Open Instagram DMs</button>
+        <button class="launch-btn" style="background: #25D366; color: white; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);" onclick="openPopup('https://web.whatsapp.com/')">📗 Open WhatsApp</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tab Switching Logic
+    function switchTab(tabName) {
+      document.querySelectorAll('.tab-btn').forEach(function(btn) { btn.classList.remove('active'); });
+      document.querySelectorAll('.tab-content').forEach(function(content) { content.classList.remove('active'); });
+
+      event.target.classList.add('active');
+      document.getElementById('tab-' + tabName).classList.add('active');
+    }
+
+    // PDF Uploader
+    document.getElementById('pdf-input').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (file && file.type === 'application/pdf') {
+        const fileURL = URL.createObjectURL(file);
+        document.getElementById('pdf-frame').src = fileURL;
+      }
+    });
+
+    // YouTube Video Embedder
+    function loadVideo() {
+      const url = document.getElementById('yt-url').value.trim();
+      let videoId = '';
+      if (url.includes('v=')) {
+        videoId = url.split('v=')[1].split('&')[0];
+      } else if (url.includes('youtu.be/')) {
+        videoId = url.split('youtu.be/')[1].split('?')[0];
+      }
+      if (videoId) {
+        document.getElementById('yt-frame').src = 'https://www.youtube.com/embed/' + videoId;
+      }
+    }
+
+    // Auto-Save Notes locally
+    const notesPad = document.getElementById('notes-pad');
+    notesPad.value = localStorage.getItem('workspace_notes') || '';
+    notesPad.addEventListener('input', function() {
+      localStorage.setItem('workspace_notes', notesPad.value);
+    });
+
+    // Smart Popup Launcher
+    function openPopup(url) {
+      const width = 480;
+      const height = window.innerHeight;
+      const left = window.innerWidth - width;
+      window.open(url, '_blank', 'width=' + width + ',height=' + height + ',top=0,left=' + left + ',resizable=yes,scrollbars=yes');
+    }
+  </script>
+</body>
+</html>
