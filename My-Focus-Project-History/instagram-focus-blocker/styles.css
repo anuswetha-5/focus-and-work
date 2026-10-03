@@ -1,0 +1,84 @@
+/* ==========================================
+   HIDE REELS
+   ========================================== */
+
+a[href*="/reels/"] {
+    display: none !important;
+}
+
+
+/* ==========================================
+   HIDE EXPLORE
+   ========================================== */
+
+a[href*="/explore/"] {
+    display: none !important;
+}
+
+
+/* ==========================================
+   HIDE HOME BUTTON
+   ========================================== */
+
+a[href="/"] {
+    display: none !important;
+}
+
+
+/* ==========================================
+   BLOCK HOME FEED
+   ========================================== */
+
+body.ig-home-blocked main {
+    display: none !important;
+}
+
+
+/* ==========================================
+   HOME BLOCK MESSAGE
+   ========================================== */
+
+#ig-block-message {
+
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 999999;
+
+    background: #181818;
+
+    color: white;
+
+    padding: 30px 40px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+
+    border: 1px solid #333;
+}
+
+
+#ig-block-message h2 {
+
+    color: #0095f6;
+
+    margin-bottom: 10px;
+}
+
+
+#ig-block-message p {
+
+    color: #aaa;
+
+    font-size: 14px;
+
+}
