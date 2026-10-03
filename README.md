@@ -3,7 +3,7 @@
 Welcome to the official repository for my focus and productivity toolkit! This repository documents a complete journey of overcoming Instagram Reels procrastination by building custom-tailored tools from scratch.
 
 ---NOTE:(For max. distraction avoiding)
-1. Download the "insta-focus-extension" in my repository and extract the files and save it in your computer.
+1. Download the "instagram-focus-blocker" in my repository and extract the files and save it in your computer.
      2. Go to your chrome browser extensions and turn on "Developer mode" then click "load unpacked" and upload the "insta-focus-extension" folder.
      3. Now check the final results.
 
@@ -34,11 +34,11 @@ This repository contains 4 distinct milestones and iterations developed during t
    * *What it does:* The final, polished all-in-one web dashboard (`index.html` + `couple.jpg`). Hosted live via Vercel, it features a personalized couple illustration theme, an auto-saving notes scratchpad (`localStorage`), a local PDF reader, a YouTube lecture embedder, and smart cross-platform chat launchers for Instagram DMs and WhatsApp.
    * Advantages: Everything was like the way i wanted it to be. and this time the customisation yellow colours of website were taken and inspired from the photo and I felt like it's our and was happy that my efforts were worth.
    * Disadvantages: During this process i forgot to check wether the reels tab was not coming or not and when i hosted the website I was able to see the reels tab also in my website although it open the instahram messaging page direty it felt like if the reels tab is still there then what is the point of making all this as my distraction is not completely gone.
-   * Solution: I then downloaded the insta-focus-extension in my chrome which made me reach my goal and now i don't get the reels tab as my chrome hides it.
+   * Solution: I then downloaded the insta-focus-extension in my chrome  but it has the focus panel so i created anothe extension named "instagram-focus-blocker" which made me reach my goal and now i don't get the reels tab as my chrome hides it.
    * What I learnt: I understood that when i host it through any website online I cannot hide it directly and an extension is required .
    * Am I satisfied?: Actually yes because since I have the extension I can easily overcome my distraction and study now with this  but I am dissatisfied with the fact that everyone who is seeing this cannot do that but if you really want to overcome FOLLOW THE STEPS BELOW:
-     1. Download the "insta-focus-extension" in my repository and extract the files and save it in your computer.
-     2. Go to your chrome browser extensions and turn on "Developer mode" then click "load unpacked" and upload the "insta-focus-extension" folder.
+     1. Download the "instagram-focus-blocker" in my repository and extract the files and save it in your computer.
+     2. Go to your chrome browser extensions and turn on "Developer mode" then click "load unpacked" and upload the "instagram-focus-blocker" folder.
      3. Now check the final results.
 
 ---
